@@ -11,7 +11,7 @@ docker run -d --name vpn-client \
   --cap-add=NET_ADMIN \
   --device /dev/net/tun \
   -v /path/with/vpn/configs:/vpn \
-  ekristen/openvpn-client --config /vpn/client.conf --askpass /vpn/client.pwd --auth-nocache
+  ekristen/openvpn-client --config /vpn/client.conf --auth-user-pass /vpn/client.pwd --auth-nocache
 ```
 
 ### Route container traffic
