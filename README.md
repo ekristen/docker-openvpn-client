@@ -1,6 +1,6 @@
-# Docker OpenVPN Client
+Forked from ekristen. Add multiarch-builds and tags for OpenVPN.
 
-Original idea borrowed from https://github.com/dperson/openvpn-client
+# Docker OpenVPN Client
 
 1. You should add the generated openvpn client config to a directory, you can call it client.ovpn
 2. You should add the password for the private key in the `client.ovpn` to `client.pwd`

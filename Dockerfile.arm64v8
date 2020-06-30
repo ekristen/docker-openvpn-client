@@ -1,0 +1,14 @@
+FROM alpine AS qemu
+
+#QEMU Download
+ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v4.0.0%2Bbalena2/qemu-4.0.0.balena2-aarch64.tar.gz
+RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
+
+FROM arm64v8/alpine:3.12
+# Add QEMU
+COPY --from=qemu qemu-aarch64-static /usr/bin
+
+ENTRYPOINT ["openvpn"]
+VOLUME ["/vpn"]
+
+RUN apk add --no-cache openvpn=2.4.9-r0

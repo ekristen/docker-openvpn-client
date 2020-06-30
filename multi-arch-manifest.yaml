@@ -1,0 +1,16 @@
+image: frauhottelmann/openvpn-client:2.4.9-r0
+manifests:
+  - image: frauhottelmann/openvpn-client:2.4.9-r0-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: frauhottelmann/openvpn-client:2.4.9-r0-arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  - image: frauhottelmann/openvpn-client:2.4.9-r0-arm32v7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
